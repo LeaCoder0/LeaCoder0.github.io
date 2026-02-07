@@ -1,33 +1,31 @@
-# Host Web
+# LeaCoder0 — Personal site
 
-A single-page, UI-rich static site ready to deploy on **GitHub Pages**.
+One-page portfolio for [LeaCoder0](https://leacoder0.github.io/): full-stack software engineer. Built for GitHub Pages with a **theme side pane** (system/light/dark + accent color picker).
 
 ## Run locally
 
-Open `index.html` in a browser, or use a local server:
+From this folder:
 
 ```bash
 python3 -m http.server 8000
-# then visit http://localhost:8000
+# open http://localhost:8000
 ```
 
 ## Deploy to GitHub Pages
 
-1. Create a new repository on GitHub (e.g. `yourusername.github.io` for a user site, or any name for a project site).
-2. Push this folder to the repo:
-   ```bash
-   git init
-   git add index.html styles.css script.js README.md
-   git commit -m "Initial site"
-   git branch -M main
-   git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
-   git push -u origin main
-   ```
-3. On GitHub: **Settings → Pages → Source**: Deploy from branch `main`, folder `/ (root)`.
-4. Your site will be at `https://YOUR_USERNAME.github.io/YOUR_REPO/` (or `https://YOUR_USERNAME.github.io` for a user site).
+1. Push this folder to your repo (e.g. `leacoder0/leacoder0.github.io` or any repo name).
+2. **Settings → Pages**: Source = “Deploy from a branch”, branch = `main`, folder = `/ (root)`.
+3. Site will be at `https://leacoder0.github.io/` (user site) or `https://leacoder0.github.io/repo-name/` (project site).
 
 ## Customize
 
-- Edit `index.html` for content and structure.
-- Edit `styles.css` for colors (see `:root` variables), typography, and layout.
-- Update the GitHub link in the Contact section to your actual repo.
+- **Content:** Edit `index.html` — replace placeholders for resume, email, GitHub, LinkedIn, and project links when ready.
+- **Theme:** Use the **theme** button (bottom-right) to switch System/Light/Dark and pick an accent color. Choices are saved in `localStorage`.
+- **Colors/variables:** All theme colors are in `styles.css` (`:root` and `[data-theme]`). Accent is also controlled by the pane and `script.js` (stored in `localStorage`).
+- **Profile photo:** Replace the avatar block in the hero with an `<img>` pointing to a file (e.g. `me.jpg`) in this folder.
+
+## Placeholders to hook up later
+
+- Resume link (Work section)
+- Email, GitHub, LinkedIn (Contact section)
+- Project links (each card has a “Link coming soon” — set `href` and remove the `placeholder` class)

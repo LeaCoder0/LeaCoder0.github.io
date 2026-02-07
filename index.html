@@ -3,21 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Host Web — Build & Ship</title>
+  <title>LeaCoder0 — Software Engineer</title>
+  <meta name="description" content="Full-stack software engineer. I automate the stuff nobody cares about—for fun and the excitement of the process.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="noise" aria-hidden="true"></div>
 
+  <!-- Theme side pane -->
+  <aside class="theme-pane" id="theme-pane" aria-label="Theme and color settings">
+    <div class="theme-pane-header">
+      <h2 class="theme-pane-title">Theme</h2>
+      <button type="button" class="theme-pane-close" id="theme-pane-close" aria-label="Close theme panel">&times;</button>
+    </div>
+    <div class="theme-pane-body">
+      <div class="theme-option">
+        <label class="theme-option-label">Appearance</label>
+        <div class="theme-option-buttons" role="group" aria-label="Color scheme">
+          <button type="button" class="theme-btn active" data-theme="system" aria-pressed="true">System</button>
+          <button type="button" class="theme-btn" data-theme="light" aria-pressed="false">Light</button>
+          <button type="button" class="theme-btn" data-theme="dark" aria-pressed="false">Dark</button>
+        </div>
+      </div>
+      <div class="theme-option">
+        <label class="theme-option-label">Accent color</label>
+        <div class="accent-presets">
+          <button type="button" class="accent-swatch" data-accent="#e07c4c" style="--swatch:#e07c4c" aria-label="Warm coral"></button>
+          <button type="button" class="accent-swatch" data-accent="#22d3ee" style="--swatch:#22d3ee" aria-label="Cyan"></button>
+          <button type="button" class="accent-swatch" data-accent="#a78bfa" style="--swatch:#a78bfa" aria-label="Violet"></button>
+          <button type="button" class="accent-swatch" data-accent="#34d399" style="--swatch:#34d399" aria-label="Emerald"></button>
+          <button type="button" class="accent-swatch" data-accent="#f59e0b" style="--swatch:#f59e0b" aria-label="Amber"></button>
+        </div>
+        <div class="accent-custom">
+          <label class="visually-hidden" for="accent-picker">Custom accent color</label>
+          <input type="color" id="accent-picker" value="#e07c4c" class="accent-picker">
+          <span class="accent-custom-label">Custom</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <button type="button" class="theme-pane-toggle" id="theme-pane-toggle" aria-label="Open theme settings" aria-expanded="false">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+  </button>
+
   <header class="header">
     <nav class="nav">
-      <a href="#" class="logo">Host<span class="logo-accent">Web</span></a>
+      <a href="#" class="logo">LeaCoder0</a>
       <ul class="nav-links">
-        <li><a href="#features">Features</a></li>
         <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#work">Work</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <button class="nav-toggle" aria-label="Toggle menu">
@@ -30,75 +69,106 @@
 
   <main>
     <section class="hero">
-      <p class="hero-label">Static hosting, zero config</p>
-      <h1 class="hero-title">
-        Ship your site to the&nbsp;<em>edge</em>
-      </h1>
-      <p class="hero-desc">
-        A single place to host, share, and iterate. Fast, simple, and always online.
-      </p>
-      <div class="hero-actions">
-        <a href="#features" class="btn btn-primary">See how it works</a>
-        <a href="#contact" class="btn btn-ghost">Get in touch</a>
-      </div>
-      <div class="hero-visual">
-        <div class="browser-mock">
-          <div class="browser-bar">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-          </div>
-          <div class="browser-content">
-            <div class="code-line"></div>
-            <div class="code-line short"></div>
-            <div class="code-line"></div>
-            <div class="code-line short"></div>
-            <div class="code-line accent"></div>
+      <div class="hero-profile">
+        <div class="hero-avatar" aria-hidden="true">
+          <span class="hero-avatar-placeholder">L</span>
+        </div>
+        <div class="hero-intro">
+          <p class="hero-label">Full-stack Software Engineer</p>
+          <h1 class="hero-title">LeaCoder0</h1>
+          <p class="hero-tagline">Overthinker, probably overthinking right now.</p>
+          <p class="hero-desc">
+            I like to code and automate the stuff that nobody cares about. It may take me three or four hours to automate something that could be done in minutes—but I'm here for the fun and the excitement the process gives me. The hours spent automating will be saved when I use it for real.
+          </p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">See my projects</a>
+            <a href="#contact" class="btn btn-ghost">Get in touch</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="features" class="features">
-      <h2 class="section-title">Why host here</h2>
+    <section id="about" class="section about">
+      <h2 class="section-title">Why I build</h2>
+      <div class="about-content">
+        <p class="about-lead">
+          I automate things for the thrill of it. The payoff is the process—and the time I get back every time I run the script.
+        </p>
+        <p class="about-lang">I work and think in <strong>English</strong> and <strong>தமிழ் (Tamil)</strong>.</p>
+      </div>
+    </section>
+
+    <section id="projects" class="section projects">
+      <h2 class="section-title">Projects</h2>
+      <p class="section-desc">Things I’ve built for fun and for use. Links coming soon.</p>
       <div class="cards">
         <article class="card" data-reveal>
-          <div class="card-icon">⚡</div>
-          <h3>Blazing fast</h3>
-          <p>Static assets served from the edge. No server spin-up, no cold starts.</p>
+          <div class="card-icon">📈</div>
+          <h3>Stock price bots</h3>
+          <p>Bots to check stock market prices and alerts.</p>
+          <a href="#" class="card-link placeholder">Link coming soon</a>
         </article>
         <article class="card" data-reveal>
-          <div class="card-icon">🔒</div>
-          <h3>HTTPS by default</h3>
-          <p>Free SSL, custom domains, and secure headers out of the box.</p>
+          <div class="card-icon">📊</div>
+          <h3>Portfolio dashboard</h3>
+          <p>Dashboard to track and visualize portfolio performance.</p>
+          <a href="#" class="card-link placeholder">Link coming soon</a>
         </article>
         <article class="card" data-reveal>
-          <div class="card-icon">🎨</div>
-          <h3>Your design</h3>
-          <p>HTML, CSS, and JS. No lock-in, no framework required.</p>
+          <div class="card-icon">🖥️</div>
+          <h3>Local webapps</h3>
+          <p>Lots of small local web apps for daily workflows.</p>
+          <a href="#" class="card-link placeholder">Link coming soon</a>
+        </article>
+        <article class="card" data-reveal>
+          <div class="card-icon">🤖</div>
+          <h3>Telegram bots</h3>
+          <p>Tele bots for notifications, data, and automation.</p>
+          <a href="#" class="card-link placeholder">Link coming soon</a>
+        </article>
+        <article class="card" data-reveal>
+          <div class="card-icon">📱</div>
+          <h3>Demo mobile apps</h3>
+          <p>2–3 demo mobile apps that hit APIs and display data.</p>
+          <a href="#" class="card-link placeholder">Link coming soon</a>
         </article>
       </div>
     </section>
 
-    <section id="about" class="about">
-      <div class="about-inner">
-        <h2 class="section-title">Built for makers</h2>
-        <p class="about-text">
-          This site is a single-page template you can deploy to GitHub Pages in one push.
-          Edit the markup and styles to match your project, then point your repo to Pages and go live.
-        </p>
+    <section id="skills" class="section skills">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-list">
+        <span class="skill-tag">Java</span>
+        <span class="skill-tag">Bash</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">HTML / CSS</span>
+        <span class="skill-tag">React <em>(learning)</em></span>
+        <span class="skill-tag">Mobile development <em>(learning)</em></span>
       </div>
     </section>
 
-    <section id="contact" class="contact">
-      <h2 class="section-title">Stay in the loop</h2>
-      <p class="contact-desc">Drop a line or open an issue on GitHub.</p>
-      <a href="https://github.com" class="btn btn-primary" target="_blank" rel="noopener">View on GitHub</a>
+    <section id="work" class="section work">
+      <h2 class="section-title">Work & education</h2>
+      <div class="work-content">
+        <p><strong>Currently:</strong> Software Developer. I keep the company name private.</p>
+        <p><strong>Education:</strong> Graduated college with <strong>8.5 CGPA</strong>, India.</p>
+      </div>
+      <a href="#" class="btn btn-ghost placeholder-resume">Resume — link coming soon</a>
+    </section>
+
+    <section id="contact" class="section contact">
+      <h2 class="section-title">Contact</h2>
+      <p class="contact-desc">Drop a line or find me online. Placeholders below—I’ll hook these up soon.</p>
+      <div class="contact-links">
+        <a href="#" class="contact-link placeholder">📧 Email — coming soon</a>
+        <a href="#" class="contact-link placeholder">GitHub — coming soon</a>
+        <a href="#" class="contact-link placeholder">LinkedIn — coming soon</a>
+      </div>
     </section>
   </main>
 
   <footer class="footer">
-    <p>Host Web · Hosted on GitHub Pages</p>
+    <p>LeaCoder0 · Software Engineer · <a href="https://leacoder0.github.io/">leacoder0.github.io</a></p>
   </footer>
 
   <script src="script.js"></script>
