@@ -56,6 +56,12 @@
   var pane = document.getElementById('theme-pane');
   var openBtn = document.getElementById('theme-pane-toggle');
   var closeBtn = document.getElementById('theme-pane-close');
+
+  function closeThemePane() {
+    if (pane) pane.classList.remove('is-open');
+    if (openBtn) openBtn.setAttribute('aria-expanded', 'false');
+  }
+
   if (pane && openBtn) {
     openBtn.addEventListener('click', function () {
       var open = !pane.classList.contains('is-open');
@@ -64,11 +70,24 @@
     });
   }
   if (pane && closeBtn) {
-    closeBtn.addEventListener('click', function () {
-      pane.classList.remove('is-open');
-      if (openBtn) openBtn.setAttribute('aria-expanded', 'false');
-    });
+    closeBtn.addEventListener('click', closeThemePane);
   }
+
+  // Close on Escape
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && pane && pane.classList.contains('is-open')) {
+      closeThemePane();
+    }
+  });
+
+  // Close on click outside pane (and not on the open button)
+  document.addEventListener('click', function (e) {
+    if (!pane || !pane.classList.contains('is-open')) return;
+    var target = e.target;
+    if (!pane.contains(target) && (!openBtn || !openBtn.contains(target))) {
+      closeThemePane();
+    }
+  });
 
   // Theme buttons
   document.querySelectorAll('.theme-btn').forEach(function (btn) {
@@ -101,8 +120,7 @@
       e.preventDefault();
       var el = document.querySelector(href);
       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      if (pane) pane.classList.remove('is-open');
-      if (openBtn) openBtn.setAttribute('aria-expanded', 'false');
+      closeThemePane();
     });
   });
 
