@@ -3,9 +3,104 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Site</title>
+  <title>Host Web — Build & Ship</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Hello from GitHub Pages</h1>
+  <div class="noise" aria-hidden="true"></div>
+
+  <header class="header">
+    <nav class="nav">
+      <a href="#" class="logo">Host<span class="logo-accent">Web</span></a>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="hero-label">Static hosting, zero config</p>
+      <h1 class="hero-title">
+        Ship your site to the&nbsp;<em>edge</em>
+      </h1>
+      <p class="hero-desc">
+        A single place to host, share, and iterate. Fast, simple, and always online.
+      </p>
+      <div class="hero-actions">
+        <a href="#features" class="btn btn-primary">See how it works</a>
+        <a href="#contact" class="btn btn-ghost">Get in touch</a>
+      </div>
+      <div class="hero-visual">
+        <div class="browser-mock">
+          <div class="browser-bar">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+          <div class="browser-content">
+            <div class="code-line"></div>
+            <div class="code-line short"></div>
+            <div class="code-line"></div>
+            <div class="code-line short"></div>
+            <div class="code-line accent"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="features">
+      <h2 class="section-title">Why host here</h2>
+      <div class="cards">
+        <article class="card" data-reveal>
+          <div class="card-icon">⚡</div>
+          <h3>Blazing fast</h3>
+          <p>Static assets served from the edge. No server spin-up, no cold starts.</p>
+        </article>
+        <article class="card" data-reveal>
+          <div class="card-icon">🔒</div>
+          <h3>HTTPS by default</h3>
+          <p>Free SSL, custom domains, and secure headers out of the box.</p>
+        </article>
+        <article class="card" data-reveal>
+          <div class="card-icon">🎨</div>
+          <h3>Your design</h3>
+          <p>HTML, CSS, and JS. No lock-in, no framework required.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="about-inner">
+        <h2 class="section-title">Built for makers</h2>
+        <p class="about-text">
+          This site is a single-page template you can deploy to GitHub Pages in one push.
+          Edit the markup and styles to match your project, then point your repo to Pages and go live.
+        </p>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2 class="section-title">Stay in the loop</h2>
+      <p class="contact-desc">Drop a line or open an issue on GitHub.</p>
+      <a href="https://github.com" class="btn btn-primary" target="_blank" rel="noopener">View on GitHub</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Host Web · Hosted on GitHub Pages</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
