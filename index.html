@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
   <div class="noise" aria-hidden="true"></div>
@@ -23,23 +23,23 @@
       <div class="theme-option">
         <label class="theme-option-label">Appearance</label>
         <div class="theme-option-buttons" role="group" aria-label="Color scheme">
-          <button type="button" class="theme-btn active" data-theme="system" aria-pressed="true">System</button>
+          <button type="button" class="theme-btn" data-theme="system" aria-pressed="false">System</button>
           <button type="button" class="theme-btn" data-theme="light" aria-pressed="false">Light</button>
-          <button type="button" class="theme-btn" data-theme="dark" aria-pressed="false">Dark</button>
+          <button type="button" class="theme-btn active" data-theme="dark" aria-pressed="true">Dark</button>
         </div>
       </div>
       <div class="theme-option">
         <label class="theme-option-label">Accent color</label>
         <div class="accent-presets">
-          <button type="button" class="accent-swatch" data-accent="#e07c4c" style="--swatch:#e07c4c" aria-label="Warm coral"></button>
-          <button type="button" class="accent-swatch" data-accent="#22d3ee" style="--swatch:#22d3ee" aria-label="Cyan"></button>
-          <button type="button" class="accent-swatch" data-accent="#a78bfa" style="--swatch:#a78bfa" aria-label="Violet"></button>
-          <button type="button" class="accent-swatch" data-accent="#34d399" style="--swatch:#34d399" aria-label="Emerald"></button>
-          <button type="button" class="accent-swatch" data-accent="#f59e0b" style="--swatch:#f59e0b" aria-label="Amber"></button>
+          <button type="button" class="accent-swatch" data-accent="#e07c4c" style="--swatch:#e07c4c; background-color:#e07c4c" aria-label="Warm coral"></button>
+          <button type="button" class="accent-swatch" data-accent="#22d3ee" style="--swatch:#22d3ee; background-color:#22d3ee" aria-label="Cyan"></button>
+          <button type="button" class="accent-swatch active" data-accent="#a78bfa" style="--swatch:#a78bfa; background-color:#a78bfa" aria-label="Violet"></button>
+          <button type="button" class="accent-swatch" data-accent="#34d399" style="--swatch:#34d399; background-color:#34d399" aria-label="Emerald"></button>
+          <button type="button" class="accent-swatch" data-accent="#f59e0b" style="--swatch:#f59e0b; background-color:#f59e0b" aria-label="Amber"></button>
         </div>
         <div class="accent-custom">
           <label class="visually-hidden" for="accent-picker">Custom accent color</label>
-          <input type="color" id="accent-picker" value="#e07c4c" class="accent-picker">
+          <input type="color" id="accent-picker" value="#a78bfa" class="accent-picker">
           <span class="accent-custom-label">Custom</span>
         </div>
       </div>
@@ -171,6 +171,6 @@
     <p>LeaCoder0 · Software Engineer · <a href="https://leacoder0.github.io/">leacoder0.github.io</a></p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="./script.js"></script>
 </body>
 </html>

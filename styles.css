@@ -4,10 +4,10 @@
    ============================================ */
 
 :root {
-  /* Default accent (warm coral); overridden by pane or localStorage */
-  --accent: #e07c4c;
-  --accent-dim: rgba(224, 124, 76, 0.18);
-  --accent-glow: rgba(224, 124, 76, 0.25);
+  /* Default accent (violet); overridden by pane or localStorage */
+  --accent: #a78bfa;
+  --accent-dim: rgba(167, 139, 250, 0.18);
+  --accent-glow: rgba(167, 139, 250, 0.25);
   --font-head: 'DM Serif Display', Georgia, serif;
   --font-body: 'DM Sans', system-ui, sans-serif;
   --radius: 12px;

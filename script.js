@@ -20,7 +20,7 @@
   }
 
   function setAccent(hex) {
-    hex = hex || getStored(STORAGE_ACCENT, '#e07c4c');
+    hex = hex || getStored(STORAGE_ACCENT, '#a78bfa');
     var r = parseInt(hex.slice(1, 3), 16);
     var g = parseInt(hex.slice(3, 5), 16);
     var b = parseInt(hex.slice(5, 7), 16);
@@ -39,7 +39,7 @@
   }
 
   function setTheme(theme) {
-    theme = theme || getStored(STORAGE_THEME, 'system');
+    theme = theme || getStored(STORAGE_THEME, 'dark');
     document.documentElement.setAttribute('data-theme', theme === 'system' ? '' : theme);
     setStored(STORAGE_THEME, theme);
     document.querySelectorAll('.theme-btn').forEach(function (btn) {
@@ -49,8 +49,8 @@
   }
 
   // Apply stored theme and accent on load
-  setTheme(getStored(STORAGE_THEME, 'system'));
-  setAccent(getStored(STORAGE_ACCENT, '#e07c4c'));
+  setTheme(getStored(STORAGE_THEME, 'dark'));
+  setAccent(getStored(STORAGE_ACCENT, '#a78bfa'));
 
   // Theme pane open/close
   var pane = document.getElementById('theme-pane');
